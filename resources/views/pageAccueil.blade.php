@@ -80,84 +80,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twibbonize - Exprimez Votre Engagement !</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Accueil</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('https://source.unsplash.com/1600x900/?crowd,festival') center/cover no-repeat;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .btn-purple {
+        background-color: #6f42c1;
+        color: white;
+        }
+        .btn-purple:hover {
+            background-color: #5a32a3;
+        }
+
+    </style>
 </head>
-<body class="bg-gray-100">
+<body>
 
     <!-- Hero Section avec Background -->
-    <header class="relative bg-cover bg-center h-screen flex items-center justify-center text-center" style="background-image: url('https://source.unsplash.com/1600x900/?crowd,festival');">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="relative z-10 text-white px-6">
-            <h1 class="text-5xl font-extrabold leading-tight">Ajoutez un Cadre Unique à Votre Image</h1>
-            <p class="mt-4 text-lg text-gray-200">Exprimez votre soutien, votre identité et votre engagement.</p>
-            <a href="#" class="mt-6 inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg text-lg transition-transform transform hover:scale-105">
+    <header class="hero d-flex align-items-center justify-content-center text-center text-white bg-primary">
+        <div class="hero-overlay"></div>
+        <div class="position-relative px-4">
+            <h1 class="display-4 fw-bold">Ajoutez un Cadre Unique à Votre Image</h1>
+            <p class="mt-3 fs-5">Exprimez votre soutien, votre identité et votre engagement.</p>
+            <a href="#" class="btn btn-warning btn-lg mt-4 fw-bold shadow-lg">
                 Créer un Twibbon Maintenant
             </a>
         </div>
     </header>
 
+
     <!-- Navigation Fixe -->
-    <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-        <div class="container mx-auto flex justify-between items-center py-4 px-6">
-            <a href="#" class="text-2xl font-bold text-blue-600">Creative App</a>
-            <div>
-                <a href="#" class="text-gray-700 hover:text-blue-600 transition">Se connecter</a>
-                <a href="#" class="ml-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">S'inscrire</a>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary fs-4" href="#">Creative App</a>
+            <div class="d-flex">
+                <a href="#" class="text-dark text-decoration-none me-3">Se connecter</a>
+                <a href="#" class="btn btn-primary px-4">S'inscrire</a>
             </div>
         </div>
     </nav>
 
-    <!-- Section Tendances -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold text-gray-800">🔥 Tendances du Moment</h2>
-            <p class="text-gray-600 mt-2">Découvrez les cadres les plus populaires de la semaine</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
-                @for ($i = 1; $i <= 4; $i++)
-                <div class="relative group bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="https://source.unsplash.com/400x300/?frame,design" alt="Cadre tendance" class="w-full h-56 object-cover transition-transform transform group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition">
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">Cadre #{{ $i }}</h3>
-                            <p class="text-sm">Ajoutez ce twibbon à votre photo</p>
+    {{-- <!-- Section Tendances -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="fw-bold text-dark">🔥 Tendances du Moment</h2>
+            <p class="text-muted">Découvrez les cadres les plus populaires de la semaine</p>
+
+            <!-- Swiper Container -->
+            <div class="swiper mySwiper mt-4">
+                <div class="swiper-wrapper">
+                    <?php for ($i = 1; $i <= 6; $i++): ?>
+                    <div class="swiper-slide">
+                        <div class="position-relative overflow-hidden rounded shadow bg-white">
+                            <img src="https://source.unsplash.com/400x300/?frame,design" alt="Cadre tendance"
+                                class="w-100 img-fluid transition scale-hover">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 opacity-0 hover-opacity-100 transition">
+                                <div class="position-absolute bottom-0 start-0 text-white p-3">
+                                    <h3 class="h5 fw-bold">Cadre #<?= $i ?></h3>
+                                    <p class="small">Ajoutez ce twibbon à votre photo</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <?php endfor; ?>
                 </div>
-                @endfor
+
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
         </div>
-    </section>
+    </section> --}}
+
 
     <!-- Section Catégories -->
-    <section class="py-16">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold text-gray-800">📂 Explorez par Catégorie</h2>
-            <p class="text-gray-600 mt-2">Parcourez des milliers de cadres selon vos préférences</p>
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="fw-bold text-dark">📂 Explorez par Catégorie</h2>
+            <p class="text-muted">Parcourez des milliers de cadres selon vos préférences</p>
 
-            <div class="flex justify-center flex-wrap gap-4 mt-6">
-                <a href="#" class="bg-blue-500 text-white py-3 px-6 rounded-lg text-lg hover:bg-blue-600 transition">Événements</a>
-                <a href="#" class="bg-green-500 text-white py-3 px-6 rounded-lg text-lg hover:bg-green-600 transition">Politique</a>
-                <a href="#" class="bg-red-500 text-white py-3 px-6 rounded-lg text-lg hover:bg-red-600 transition">Solidarité</a>
-                <a href="#" class="bg-purple-500 text-white py-3 px-6 rounded-lg text-lg hover:bg-purple-600 transition">Sport</a>
+            <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+                <a href="#" class="btn btn-primary btn-lg">Événements</a>
+                <a href="#" class="btn btn-success btn-lg">Politique</a>
+                <a href="#" class="btn btn-danger btn-lg">Solidarité</a>
+                <a href="#" class="btn btn-purple btn-lg">Sport</a>
             </div>
         </div>
     </section>
 
+
     <!-- Call to Action -->
-    <section class="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center">
-        <h2 class="text-3xl font-bold">Créez Votre Propre Twibbon Maintenant</h2>
-        <p class="text-lg text-gray-200 mt-2">Exprimez-vous et partagez votre soutien avec le monde</p>
-        <a href="#" class="mt-6 inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg text-lg transition-transform transform hover:scale-105">
-            Je Commence
-        </a>
+    <section class="py-5 text-center text-white" style="background: linear-gradient(to right, #2563EB, #10B981);">
+        <div class="container">
+            <h2 class="fw-bold">Créez Votre Propre Twibbon Maintenant</h2>
+            <p class="fs-5 text-light mt-2">Exprimez-vous et partagez votre soutien avec le monde</p>
+            <a href="#" class="btn btn-warning btn-lg fw-bold text-dark mt-3">
+                Je Commence
+            </a>
+        </div>
     </section>
 
+
+    <!-- Section Top Créateurs -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold text-dark">🏆 Top Créateurs</h2>
+            <p class="text-center text-muted mt-2">Découvrez les créateurs les plus influents</p>
+
+            <!-- Filtres -->
+            <div class="d-flex justify-content-center mt-4 gap-2">
+                <button class="btn btn-light">7 jours</button>
+                <button class="btn btn-light">30 jours</button>
+                <button class="btn btn-dark text-white">Tous</button>
+                <a href="#" class="text-primary text-decoration-none">Voir Tout</a>
+            </div>
+
+            <!-- Liste des créateurs -->
+            <div class="row mt-4">
+                <?php for ($i = 1; $i <= 9; $i++) : ?>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="d-flex align-items-center p-3 bg-white shadow-sm rounded">
+                            <div class="fw-bold text-secondary me-3">#<?= $i ?></div>
+                            <img src="https://source.unsplash.com/60x60/?person,avatar" alt="Créateur <?= $i ?>" class="rounded-circle border border-secondary">
+                            <div class="ms-3">
+                                <h3 class="h6 fw-semibold text-dark">Créateur <?= $i ?></h3>
+                                <p class="text-muted small">👥 <?= rand(1, 800) ?>k Partisans</p>
+                            </div>
+                        </div>
+                    </div>
+                <?php endfor; ?>
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- Pied de Page -->
-    <footer class="bg-gray-900 text-gray-300 py-8 text-center">
-        <p>© {{ date('Y') }} Creative App - Tous droits réservés.</p>
+    <footer class="bg-dark text-light py-4 text-center">
+        <p>© <?= date('Y') ?> Creative App - Tous droits réservés.</p>
     </footer>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
