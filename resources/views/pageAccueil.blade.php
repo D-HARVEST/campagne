@@ -107,7 +107,7 @@
 <body>
 
     <!-- Hero Section avec Background -->
-    <header class="hero d-flex align-items-center justify-content-center text-center text-white bg-primary">
+    <header class="hero d-flex align-items-center justify-content-center text-center text-white bg-success">
         <div class="hero-overlay"></div>
         <div class="position-relative px-4">
             <h1 class="display-4 fw-bold">Ajoutez un Cadre Unique à Votre Image</h1>
@@ -123,10 +123,10 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold text-primary fs-4" href="#">Creative App</a>
+            <a class="navbar-brand fw-bold text-success fs-4" href="#">Creative App</a>
             <div class="d-flex">
                 <a href="#" class="text-dark text-decoration-none me-3">Se connecter</a>
-                <a href="#" class="btn btn-primary px-4">S'inscrire</a>
+                <a href="#" class="btn btn-success px-4">S'inscrire</a>
             </div>
         </div>
     </nav>
